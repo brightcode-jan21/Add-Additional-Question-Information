@@ -1,0 +1,102 @@
+@import '../../styles/utils/colors';
+@import '../../styles/utils/breakpoints';
+
+.infoButton {  
+  float: right;
+  background: none;
+  border: none;
+  outline: none;
+  &:focus{
+      border: none;
+  } 
+  &:active{
+      transform: scale(0.99);
+      border: none;
+  }
+  @media screen and (min-width: $mobile) {
+      display: none;
+  }
+}
+
+
+.infoBoxBackground{
+  position: absolute;
+  width: 150vw;
+  height: 150vh;
+  overflow: hidden;
+  top: 0; 
+  left: 0;
+  background: $elephant-paw;
+  z-index: 2;
+  opacity: 70%; 
+  transition: all 0.2s ease;
+}
+.infoBox{
+  position: absolute;
+  width: 95vw;
+  z-index: 3;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem 0;
+  margin: 3rem 0;
+  
+  &__title{
+      color: $barney;
+      font-weight: bold;
+      line-height: 60%;
+  }
+
+  &__titleButton{
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background: none;    
+      width: 25px;
+      height: 25px;
+      border: none;
+      
+      &:focus{
+          border: none;
+      } 
+      &:active{
+          border: none;
+      }
+  }
+  &__titleButton::before, &__titleButton::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 20px;
+      height: 4px;
+      border-radius:2px;
+      background: $elephant-paw;
+  }
+  &__titleButton::before{
+      transform: rotate(45deg) ;
+  }
+  &__titleButton::after{
+      transform:rotate(-45deg) ;
+  }
+
+  &__info {
+      color: #333;
+      font-size: 1rem;
+      padding: 0 1rem;
+      font-weight: normal;
+  }
+
+}
+.infoBox::before{
+  content:"";
+  position: absolute;
+  top: -1.15rem;
+  right: 1rem;
+  width: 0px;
+  height: 0px;
+  border: 0.6rem solid;
+  border-top-color: transparent; 
+  border-right-color: transparent; 
+  border-bottom-color: #fff;
+  border-left-color: transparent;
+  z-index: 3;
+}
