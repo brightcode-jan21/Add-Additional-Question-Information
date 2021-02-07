@@ -3,6 +3,7 @@ import ProgressBar from '../progressBar/ProgressBar';
 import SelectionBox from '../selectionBox/SelectionBox';
 import Button from '../button/Button';
 import Intro from '../intro/Intro';
+import InfoBox from "../infoBox/InfoBox";
 
 import './Styles.scss';
 
@@ -10,7 +11,7 @@ const LearningModule = ({setGameStatus, gameStatus}) => {
   const [currentQuestionId, setCurrentQuestionId] = React.useState(0);
   const [quizData, setQuizData] = React.useState({});
   const [isComplete, setIsComplete] = React.useState(false);
-  
+
   let currentQuestion = quizData.questionArr ? quizData.questionArr[currentQuestionId]: {};
   
   React.useEffect(()=>{
@@ -51,7 +52,7 @@ const LearningModule = ({setGameStatus, gameStatus}) => {
       return <SelectionBox id={index} key={index} answer={answer} />
     })
   }
-
+ 
   return (
     <div className="learningModule">
       { currentQuestion.title && !isComplete &&
@@ -60,7 +61,8 @@ const LearningModule = ({setGameStatus, gameStatus}) => {
           <div className="learningModule__header">
             <div className="learningModule__title">
               { currentQuestion.title }
-            </div>
+              <InfoBox info={currentQuestion.additionalInfo }/>
+            </div>   
             <div className="learningModule__subHeader">
               { currentQuestion.additionalInfo }
             </div>

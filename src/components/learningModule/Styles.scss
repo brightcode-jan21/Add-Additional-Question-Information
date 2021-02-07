@@ -8,10 +8,15 @@
     }
 
     &__title {
-        margin: 25px 10px;
+        display: flex;
+        justify-content:space-between;
+        margin: 25px 15px 0 15px;
         color: $morning-sky;
         font-weight: 600;
         font-size: 1.5em;
+        @media screen and (min-width: $mobile) {
+            display: inline-block;
+        }
     }
 
     &__subHeader{
