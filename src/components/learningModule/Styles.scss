@@ -29,7 +29,14 @@
         @media only screen and (max-width: $mobile) {
             display: none;
         }
-    }
+	}
+	
+	&_infoIcon {
+		display: none;
+		@media only screen and (max-width: $mobile) {
+			display: block;
+		}
+	}
   
     &__answerArea {
         background-color: white;

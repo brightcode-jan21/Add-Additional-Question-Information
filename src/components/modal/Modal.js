@@ -5,7 +5,7 @@ const Modal = ({header, content, onChange, isOpen, trigger}) => {
 	if (!isOpen) {
 		return (
 			<div className="modalContainer">
-				<div className="trigger" onClick={() => onChange(true)}>
+				<div className="modalContainer__trigger" onClick={() => onChange(true)}>
 					{trigger}
 			    </div>
 			</div>
@@ -14,18 +14,18 @@ const Modal = ({header, content, onChange, isOpen, trigger}) => {
 
 	return (
 		<div className="modalContainer" onClick={() => onChange(false)}>
-			<div className="trigger">
+			<div className="modalContainer__trigger">
 				{trigger}
 			</div>
-			<div className="modalCanvas">
-				<div className="modalBody" onClick={(e) => {
+			<div className="modalContainer__modalCanvas">
+				<div className="modalContainer__modalCanvas__modalBody" onClick={(e) => {
 					e.stopPropagation();
 				}}>
-					<h2 className="close" onClick={() => onChange(false)}>x</h2>
-					<h3 className="header">
+					<h2 className="modalContainer__modalCanvas__modalBody__close" onClick={() => onChange(false)}>x</h2>
+					<h3 className="modalContainer__modalCanvas__modalBody__header">
 						{header}
 					</h3>
-					<p className="content">
+					<p className="modalContainer__modalCanvas__modalBody__content">
 						{content}
 					</p>
 				</div>

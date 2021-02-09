@@ -66,13 +66,15 @@ const LearningModule = ({setGameStatus, gameStatus}) => {
             <div className="learningModule__subHeader">
               { currentQuestion.additionalInfo }
             </div>
-			<Modal 
-			  header="Rules"
-			  content={currentQuestion.additionalInfo} 
-			  isOpen={isInfoModalOpen} 
-			  onChange={setIsInfoModalOpen} 
-			  trigger="i"
-			/>
+			<div className="learningModule_infoIcon">
+				<Modal 
+					header="Rules"
+					content={currentQuestion.additionalInfo} 
+					isOpen={isInfoModalOpen} 
+					onChange={setIsInfoModalOpen} 
+					trigger="i"
+				/>
+		    </div>
           </div>
 
           <div className="learningModule__answerArea">

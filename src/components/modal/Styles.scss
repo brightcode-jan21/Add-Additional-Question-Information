@@ -2,22 +2,18 @@
 @import '../../styles/utils/breakpoints';
 
 .modalContainer {
-	display: none;
-	@media only screen and (max-width: $mobile) {
-		display: block;
-		.trigger {
-			background-color: $morning-sky;
-			border-radius: 50%;
-			height: 1rem;
-			width: 1rem;
-			padding: 0.2em;
-			color: white;
-			font-weight: 700;
-			font-family: serif;
-			cursor: pointer;
-		}
+	&__trigger {
+		background-color: $morning-sky;
+		border-radius: 50%;
+		height: 1rem;
+		width: 1rem;
+		padding: 0.2em;
+		color: white;
+		font-weight: 700;
+		font-family: serif;
+		cursor: pointer;
 	}
-	.modalCanvas {
+	&__modalCanvas {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -25,7 +21,7 @@
 		width: 100vw;
 		background-color: rgba(0, 0, 0, 0.5);
 		z-index: 1;
-		.modalBody {
+		&__modalBody {
 			position: relative;
 			top: 21%;
 			margin: 8px;
@@ -35,10 +31,10 @@
 			color: black;
 			font-weight: unset;
 			font-family: unset;
-			.header {
+			&__header {
 				color: $barney;
 			}
-			.close {
+			&__close {
 				position: absolute;
 				top: 0;
 				right: 20px;
