@@ -66,7 +66,7 @@ const LearningModule = ({setGameStatus, gameStatus}) => {
             <div className="learningModule__subHeader">
               { currentQuestion.additionalInfo }
             </div>
-			<div className="learningModule_infoIcon">
+			<div className="learningModule__infoIcon">
 				<Modal 
 					header="Rules"
 					content={currentQuestion.additionalInfo} 
