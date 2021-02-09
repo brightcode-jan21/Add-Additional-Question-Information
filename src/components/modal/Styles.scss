@@ -1,0 +1,51 @@
+@import '../../styles/utils/colors';
+@import '../../styles/utils/breakpoints';
+
+.modalContainer {
+	display: none;
+	@media only screen and (max-width: $mobile) {
+		display: block;
+		.trigger {
+			background-color: $morning-sky;
+			border-radius: 50%;
+			height: 1rem;
+			width: 1rem;
+			padding: 0.2em;
+			color: white;
+			font-weight: 700;
+			font-family: serif;
+			cursor: pointer;
+		}
+	}
+	.modalCanvas {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: 100vw;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 1;
+		.modalBody {
+			position: relative;
+			top: 21%;
+			margin: 8px;
+			padding: 5px 20px;
+			border-radius: 8px;
+			background-color: white;
+			color: black;
+			font-weight: unset;
+			font-family: unset;
+			.header {
+				color: $barney;
+			}
+			.close {
+				position: absolute;
+				top: 0;
+				right: 20px;
+				color: $elephant-paw;
+				font-weight: 700;
+				cursor: pointer;
+			}
+		}
+	}
+}
