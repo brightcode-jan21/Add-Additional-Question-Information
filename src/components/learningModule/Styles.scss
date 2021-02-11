@@ -4,7 +4,16 @@
 
 .learningModule {
     &__header {
-        text-align: center;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+
+        @media only screen and (max-width: $mobile) {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 15px 0 10px;
+        }
     }
 
     &__title {
@@ -20,7 +29,14 @@
         @media only screen and (max-width: $mobile) {
             display: none;
         }
-    }
+	}
+	
+	&__infoIcon {
+		display: none;
+		@media only screen and (max-width: $mobile) {
+			display: block;
+		}
+	}
   
     &__answerArea {
         background-color: white;
